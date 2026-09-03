@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "A comprehensive 21-lesson curriculum teaching everything you need to know to start building Generative AI applications"
 readme = "README.md"
 license = {text = "MIT"}
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 authors = [
     {name = "Jim Bennett", email = "jim.bennett@microsoft.com"}
 ]
@@ -21,11 +21,17 @@ classifiers = [
 ]
 
 dependencies = [
-    "openai>=1.0.0",
-    "python-dotenv>=1.0.0",
+    "openai>=1.12.0",
+    "python-dotenv==1.2.2",
     "requests>=2.31.0",
     "azure-ai-inference>=1.0.0b1",
     "tiktoken>=0.5.0",
+    "ipywidgets==8.1.8",
+    "numpy==2.4.2",
+    "matplotlib==3.10.8",
+    "pandas==3.0.0",
+    "tqdm==4.68.4",
+    "scikit-learn>=1.9.0",
 ]
 
 [project.optional-dependencies]
@@ -111,3 +117,14 @@ ignore = [
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 addopts = "-v --tb=short"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "nbstripout>=0.9.1",
+    "python-dotenv>=1.2.2",
+]
